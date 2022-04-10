@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		A12F2A3928004773007425C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12F2A3828004773007425C4 /* AppDelegate.swift */; };
 		A12F2A3B28004773007425C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12F2A3A28004773007425C4 /* SceneDelegate.swift */; };
-		A12F2A3D28004773007425C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12F2A3C28004773007425C4 /* ViewController.swift */; };
+		A12F2A3D28004773007425C4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12F2A3C28004773007425C4 /* MainViewController.swift */; };
 		A12F2A4028004773007425C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A12F2A3E28004773007425C4 /* Main.storyboard */; };
 		A12F2A4228004776007425C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A12F2A4128004776007425C4 /* Assets.xcassets */; };
 		A12F2A4528004776007425C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A12F2A4328004776007425C4 /* LaunchScreen.storyboard */; };
+		A12F2A4D280047BB007425C4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12F2A4C280047BB007425C4 /* NetworkManager.swift */; };
+		A12F2A5528006246007425C4 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12F2A5428006246007425C4 /* Price.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A12F2A3528004773007425C4 /* HomeWork 2.10 (API).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeWork 2.10 (API).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A12F2A3828004773007425C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A12F2A3A28004773007425C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A12F2A3C28004773007425C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A12F2A3C28004773007425C4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A12F2A3F28004773007425C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A12F2A4128004776007425C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A12F2A4428004776007425C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A12F2A4628004776007425C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A12F2A4C280047BB007425C4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A12F2A5428006246007425C4 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,65 @@
 		A12F2A3728004773007425C4 /* HomeWork 2.10 (API) */ = {
 			isa = PBXGroup;
 			children = (
-				A12F2A3828004773007425C4 /* AppDelegate.swift */,
-				A12F2A3A28004773007425C4 /* SceneDelegate.swift */,
-				A12F2A3C28004773007425C4 /* ViewController.swift */,
-				A12F2A3E28004773007425C4 /* Main.storyboard */,
-				A12F2A4128004776007425C4 /* Assets.xcassets */,
-				A12F2A4328004776007425C4 /* LaunchScreen.storyboard */,
-				A12F2A4628004776007425C4 /* Info.plist */,
+				A12F2A4E280058B1007425C4 /* ViewControllers */,
+				A12F2A52280058F0007425C4 /* NetworkManager */,
+				A12F2A5328005913007425C4 /* Models */,
+				A12F2A51280058D6007425C4 /* App */,
+				A12F2A4F280058BE007425C4 /* Stroyboards */,
+				A12F2A50280058C9007425C4 /* Resources */,
 			);
 			path = "HomeWork 2.10 (API)";
+			sourceTree = "<group>";
+		};
+		A12F2A4E280058B1007425C4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A12F2A3C28004773007425C4 /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A12F2A4F280058BE007425C4 /* Stroyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A12F2A3E28004773007425C4 /* Main.storyboard */,
+				A12F2A4328004776007425C4 /* LaunchScreen.storyboard */,
+			);
+			path = Stroyboards;
+			sourceTree = "<group>";
+		};
+		A12F2A50280058C9007425C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A12F2A4128004776007425C4 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A12F2A51280058D6007425C4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A12F2A3828004773007425C4 /* AppDelegate.swift */,
+				A12F2A3A28004773007425C4 /* SceneDelegate.swift */,
+				A12F2A4628004776007425C4 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A12F2A52280058F0007425C4 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				A12F2A4C280047BB007425C4 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		A12F2A5328005913007425C4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A12F2A5428006246007425C4 /* Price.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +192,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A12F2A3D28004773007425C4 /* ViewController.swift in Sources */,
+				A12F2A4D280047BB007425C4 /* NetworkManager.swift in Sources */,
+				A12F2A3D28004773007425C4 /* MainViewController.swift in Sources */,
 				A12F2A3928004773007425C4 /* AppDelegate.swift in Sources */,
+				A12F2A5528006246007425C4 /* Price.swift in Sources */,
 				A12F2A3B28004773007425C4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,7 +345,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X5R2XG222B;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HomeWork 2.10 (API)/Info.plist";
+				INFOPLIST_FILE = "HomeWork 2.10 (API)/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -304,7 +360,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,7 +373,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X5R2XG222B;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HomeWork 2.10 (API)/Info.plist";
+				INFOPLIST_FILE = "HomeWork 2.10 (API)/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -332,7 +388,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
