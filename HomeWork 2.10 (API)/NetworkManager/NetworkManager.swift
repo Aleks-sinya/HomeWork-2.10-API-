@@ -16,19 +16,17 @@ class NetworkManager {
     
     private let urlString = "https://api.coingecko.com/api/v3/exchange_rates"
     
-    func fetchData() {
+    func fetchData(completion: @escaping(Rates) -> Void) {
         guard let url = URL(string: urlString) else { return }
-        URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
-            
-            if(error != nil) {
-                print(error!)
-                return
+        
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                print(error?.localizedDescription ?? "No error description")
             }
             
             do {
-                let json = try JSONDecoder().decode(Rates.self, from: data!)
-                let getPrices = MainViewController()
-                getPrices.setPrices(currency: json.rates)
+                let json = try JSONDecoder().decode(Rates.self, from: data)
+                setPrices(currency: json.rates)
             } catch let error {
                 print(error)
                 return
