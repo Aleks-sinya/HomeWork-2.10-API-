@@ -13,25 +13,29 @@ class MainViewController: UIViewController {
     @IBOutlet var usdLabel: UILabel!
     @IBOutlet var lastUpdatedLabel: UILabel!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkManager.shared.fetchData { rates in
-            completion(rates)
+        NetworkManager.fetchData { rates in
+            
+            DispatchQueue.main.async {
+                self.setPrices(currency: rates.rates)
+            }
         }
         
         _ = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(refreshData), userInfo: nil, repeats: true)
         
     }
     
-    @objc func refreshData() -> Void {
-        NetworkManager.shared.fetchData { rates in
-            completion(rates)
+    @objc func refreshData() {
+        NetworkManager.fetchData { rates in
+            
+            DispatchQueue.main.async {
+                self.setPrices(currency: rates.rates)
+            }
         }
     }
     
-     private func setPrices(currency: Currency) {
+    private func setPrices(currency: Currency) {
         DispatchQueue.main.async {
             self.btcLabel.text = self.formatPrice(currency.btc)
             self.usdLabel.text = self.formatPrice(currency.usd)

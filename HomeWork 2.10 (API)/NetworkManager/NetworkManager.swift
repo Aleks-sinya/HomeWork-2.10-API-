@@ -10,27 +10,26 @@ import Foundation
 
 class NetworkManager {
     
-    static let shared = NetworkManager()
-    
-    private init() {}
-    
-    private let urlString = "https://api.coingecko.com/api/v3/exchange_rates"
-    
-    func fetchData(completion: @escaping(Rates) -> Void) {
+    class func fetchData(completion: @escaping(Rates) -> Void) {
+        let urlString = "https://api.coingecko.com/api/v3/exchange_rates"
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {
                 print(error?.localizedDescription ?? "No error description")
+                return
             }
             
             do {
-                let json = try JSONDecoder().decode(Rates.self, from: data)
-                setPrices(currency: json.rates)
+                let rates = try JSONDecoder().decode(Rates.self, from: data)
+                completion(rates)
+                print(rates)
             } catch let error {
                 print(error)
                 return
             }
         }.resume()
     }
+    
+    private init() {}
 }
